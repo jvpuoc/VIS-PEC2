@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- Copy these scripts to your own server or web hosting: -->
+<script src="https://www.graphica.app/graphicajs/papaparse.min.js" type="text/javascript"></script>
+<script src="https://www.graphica.app/graphicajs/graphica.1.0.45.js" type="text/javascript"></script>
+<!-- SCImago Graphica © All rights reserved, 2021. https://www.graphica.app -->
+<!-- Basic style -->
+													<link rel="preconnect" href="https://fonts.gstatic.com">
+													<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+													<style>
+														body {
+															font-family: 'Inter', sans-serif; 
+															background-color:rgb(240,240,240);
+														}
+														#chartid {
+															display: block;
+															width:100%;
+															max-width: 1200px;
+															margin:auto;
+															min-height: 600px;
+															background-color:white;
+															user-select:none;
+														}
+													</style>
+													<script type="text/javascript">
+														main(function () {
+															// "main" is a function that is called when the DOMContentLoaded event is triggered.
+
+															// chart settings
+															var settings={"annotations":[{"criteria":{"Nombre del partido":"Republicano","Elecciones":"2024"},"x":14,"y":85.74837,"width":150,"align":"left","text":"<strong>Donald Trump wins</strong> the 2024 election","type":"visible","line_type":"fine arrow","line_curvature":"curve","font_size":null,"line_color":"#000000","text_color":"#000000","line_width":1,"text_stroke":true},{"criteria":{"Nombre del partido":"Democrata","Elecciones":"2020"},"x":-99.1875,"y":91,"width":150,"align":"left","text":"<strong>Joe Biden wins</strong> the 2020 election","type":"visible","line_type":"fine arrow","line_curvature":"reverse curve","font_size":null,"line_color":"#000000","text_color":"#000000","line_width":1,"text_stroke":true}],"general":{"label_config":"[Porcentaje de votos]","tooltip_config":"Nombre del partido:[Nombre del partido]<br/>Porcentaje de votos:[Porcentaje de votos]<br/>Elecciones:[Elecciones]","default_shape":"circle","circle_chart_type":"rose","default_size":6,"layout":"default","rose_mapping":"area","default_color":"#ffffff","default_palette":"#6da7de;#9e0059;#ddd82c;#d82222;#5ea15d;#943fa6;#63c5b5;#ff38ba;#eb861e;#ee266d","colors":{"2020":"#72dfbb","2024":"#94009e"},"saturation":0.09,"default_alpha":0.82,"reference_lines":"none","title":"<span style=\"font-size: x-large;\">Resultados de las dos últmas elecciones </span><br/><span style=\"font-size: x-large;\">presidenciales a los EEUU</span><br/><span style=\"font-size: small;\">Autor: Joan Valls Pérez</span>","top_padding":32,"bottom_padding":0,"label_align":"center","label_placement":"out right","label_orientation":"horizontal","label_vertical_align":"middle","label_allow_overlapping":false,"amount_of_labels":1,"labels_colored_as_marks":false,"label_auto_contrast":true,"background_color":"#e9e7e7","tooltip_align":"left","default_tooltip_size":14},"grammar":[{"variable":"Porcentaje de votos","property":"AREA","min":19,"range":"independent"},{"variable":"Elecciones","property":"COLOR","sort_type":"alphabetical","sort_order":"desc"},{"variable":"Porcentaje de votos","property":"LABEL","number_suffix":"%"},{"variable":"Nombre del partido","property":"TOOLTIP"},{"variable":"Porcentaje de votos","property":"TOOLTIP"},{"variable":"Elecciones","property":"TOOLTIP"},{"variable":"Nombre del partido","property":"MULTIPLES","right_padding":-34,"sort_type":"none","left_padding":38,"bottom_padding":40,"top_padding":41,"alias":{"Democrata":"Demócrata"}}]}
+var data="Nombre del partido;Elecciones;Porcentaje de votos\n\"Democrata\";\"2020\";51.31\n\"Republicano\";\"2020\";46.85\n\"Libertario\";\"2020\";1.18\n\"Verde\";\"2020\";0.26\n\"Democrata\";\"2024\";47.82\n\"Republicano\";\"2024\";50.42\n\"Libertario\";\"2024\";0.41\n\"Verde\";\"2024\";0.47\n"
+var ds=new graphica.Dataset({
+												          data: data,
+												          datatypes: {"Nombre del partido":"string","Elecciones":"string","Porcentaje de votos":"number"}
+
+												        	}).done(function () {
+												          		new graphica.Chart(this).add('chartid',settings);
+												        	});
+												     });
+													</script>
+												</head>
+												<body>
+													<div id="chartid"></div>
+												</body>
+												</html>
